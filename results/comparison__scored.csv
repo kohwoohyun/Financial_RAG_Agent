@@ -1,0 +1,16 @@
+question,ground_truth,llm_correct,rag_correct
+2024년 삼성전자 매출액이 얼마야?,300조 8709억원,False,True
+2023년 삼성전자 영업이익은 얼마야?,6조 5669억원,False,True
+2024년 SK하이닉스 매출액이 얼마야?,66조 1929억원,False,True
+2023년 SK하이닉스 영업이익은 얼마야?,-8조 2696억원,False,True
+2024년 현대자동차 자산총계는?,339조 7984억원,False,True
+2023년 현대자동차 당기순이익은?,12조 2723억원,False,True
+2024년 LG에너지솔루션 매출액이 얼마야?,25조 6195억원,False,True
+2022년 LG에너지솔루션 자본총계는?,20조 5937억원,False,True
+2024년 NAVER 영업이익은 얼마야?,1조 9792억원,False,True
+2023년 NAVER 자산총계는?,35조 7378억원,False,True
+2022년 삼성전자 부채총계는?,93조 6749억원,False,True
+2024년 SK하이닉스 자산총계는?,119조 8552억원,False,True
+2023년 현대자동차 매출액이 얼마야?,162조 6635억원,False,True
+2024년 LG에너지솔루션 영업이익은?,0조 5753억원,False,True
+2022년 NAVER 매출액이 얼마야?,8조 2200억원,False,True
