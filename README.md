@@ -1,6 +1,6 @@
 # 로컬 LLM 기반 금융 의사결정 지원 시스템 (LLM vs RAG vs Agent)
 
-안 쓰는 8~9년 된 노트북에 Linux를 설치하고 Ollama + Gemma 3를 직접 구축하여, 금융 의사결정 상황에서 **LLM 단독 / RAG / Agent** 세 가지 방식의 정확도와 신뢰성을 비교 분석한 프로젝트입니다.
+Linux OS에서 설치하고 Ollama + Gemma 3를 구축하여, 금융 의사결정 상황에서 **LLM 단독 / RAG / Agent** 세 가지 방식의 정확도와 신뢰성을 비교 분석한 프로젝트입니다.
 
 ## 프로젝트 배경
 
@@ -12,12 +12,12 @@
 
 | 구성 요소 | 사용 기술 |
 |---|---|
-| 실행 환경 | Ubuntu Linux (8~9년 된 노트북, CPU only, 8GB RAM) |
+| 실행 환경 | Ubuntu Linux 24.04 |
 | LLM 서버 | Ollama |
 | LLM 모델 | Gemma 3 4B |
 | RAG 프레임워크 | LangChain + FAISS |
 | 임베딩 모델 | snunlp/KR-SBERT-V40K-klueNLI-augSTS |
-| Agent | 직접 구현한 ReAct 패턴 (재무데이터검색 Tool + 웹검색 Tool) |
+| Agent | ReAct 패턴 구현 (재무데이터검색 Tool + 웹검색 Tool) |
 | 데이터 출처 | 금융감독원 Open DART OpenAPI |
 
 ## 데이터
@@ -36,30 +36,29 @@ financial_rag_agent/
 ├── .gitignore
 │
 ├── data/
-│   ├── .json                      # DART 원본 공시 데이터 (5개 기업 × 3개년)
+│   ├── .json                       # DART 원본 공시 데이터 (5개 기업 × 3개년)
 │   └── faiss_index/                # FAISS 벡터 DB
 │
-├── 1_데이터수집/
+├── 1_data/
 │   ├── get_corp_codes.py           # 기업 고유번호 전체 목록 다운로드
 │   ├── find_corp_code.py           # 분석 대상 기업 코드 조회
 │   └── collect_reports.py          # DART API로 재무 데이터 수집
 │
-├── 2_RAG구축/
+├── 2_RAG/
 │   ├── build_vectorstore.py        # 벡터 DB 구축 (회사명/연도/항목명 메타데이터 포함)
 │   └── test_retrieval.py           # 검색 동작 테스트
 │
-├── 3_Agent구축/
-│   └── agent_answer.py             # ReAct 패턴 직접 구현 (RAG Tool + 웹검색 Tool)
+├── 3_agent/
+│   └── agent_answer.py             # ReAct 패턴 구현 (RAG Tool + 웹검색 Tool)
 │
-├── 4_실험_및_평가/
+├── 4_evaluate/
 │   ├── final_comparison.py         # LLM 단독 / RAG / Agent 3단계 비교 실행
 │   ├── evaluate_final.py           # 재무수치 질문 자동 채점
 │   └── view_final.py               # 결과 확인용 출력 스크립트
 │
 └── results/
-├── comparison_.csv                  # 1차 실험 원본 결과 (LLM vs RAG, 15문항)
-├── final_comparison_.csv            # 2차 실험 원본 결과 (LLM vs RAG vs Agent, 10문항)
-└── final_comparison__scored.csv     # 2차 실험 자동 채점 결과
+    ├── comparison__scored.csv           # 1차 실험 결과 (LLM vs RAG, 15문항)
+    └── final_comparison__scored.csv     # 2차 실험 결과 (LLM vs RAG vs Agent, 10문항)
 ```
 ## 실험 설계
 
