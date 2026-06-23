@@ -139,15 +139,18 @@ pip install langchain langchain-ollama langchain-community faiss-cpu sentence-tr
 
 # 3. 데이터 수집 (DART API 키 필요)
 export DART_API_KEY="발급받은키"
-python 1_데이터수집/get_corp_codes.py
-python 1_데이터수집/collect_reports.py
+python 1_data/get_corp_codes.py
+python 1_data/collect_reports.py
 
 # 4. 벡터 DB 구축
-python 2_RAG구축/build_vectorstore.py
+python 2_RAG/build_vectorstore.py
 
-# 5. 비교 실험 실행
-python 4_실험_및_평가/final_comparison.py
-python 4_실험_및_평가/evaluate_final.py
+# 5. Agent 구축
+python 3_agent/agent_answer.py
+
+# 6. 비교 실험 실행
+python 4_evaluate/final_comparison.py
+python 4_evaluate/evaluate_final.py
 ```
 
 ## 기술 스택
