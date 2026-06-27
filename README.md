@@ -214,6 +214,20 @@ python 3_agent/agent_answer.py
 # 6. 비교 실험 실행
 python 4_evaluate/final_comparison.py
 python 4_evaluate/evaluate_final.py
+
+# 7. 심화 실험 — 추론 복잡도별 진단 (Multi-hop)
+python 5_advanced_experiments/multihop_consistency.py
+python 5_advanced_experiments/analyze_multihop.py
+python 5_advanced_experiments/fix_consistency.py
+python 5_advanced_experiments/check_calc_failures.py
+
+# 8. 심화 실험 — 계산 Tool 위임 개선
+python 5_advanced_experiments/calc_tool_fix.py
+python 5_advanced_experiments/check_calc_fix_result.py
+
+# 9. 심화 실험 — Tool 신뢰 검증
+python 5_advanced_experiments/tool_trust_test.py
+python 5_advanced_experiments/check_trust_result.py
 ```
 
 ## 기술 스택
